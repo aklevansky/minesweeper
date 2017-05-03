@@ -1,0 +1,60 @@
+html {
+	background-color: #d3d3d3;
+}
+
+body {
+	margin: 5vh;
+	min-height: 90vh;
+	background-color: white;
+	font-size: 1.5em;
+}
+
+#description {
+	width: 50%;
+	float: left;
+}
+
+#description h1 {
+	margin: 1em 0;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+#description ul {
+	width: 65%;
+	margin: 0 auto;
+}
+
+#description li {
+	margin-top: 0.5em;
+}
+
+#minesweeper-container {
+	width: 50%;
+	float: right;
+}
+
+.minesweeper {
+	width: 18em;
+	margin: 2em auto;
+}
+
+#messageContainer {
+	color: red;
+	border: 2px solid red;
+	padding: 2em;
+	font-weight: bold;
+	width: 65%;
+	margin: 2em auto;
+	display: none;
+}
+
+#messageContainer.show {
+	display: block;
+}
+
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
