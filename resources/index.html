@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Miner</title>
+	<link href='./css/styles.css' rel='stylesheet' type='text/css'>
+	<script src="../lib/lodash.js"></script>
+	<script src="js/timer.js"></script>
+	<script src="js/game.js"></script>
+	<script src="js/minesweeper.js"></script>
+</head>
+<body>
+	<div id='minesweeperGame'></div>
+
+	<script type="text/template" id="minesweeper-field">
+		<div data-type="minesweeper" class="minesweeper">
+		<div data-type="controls" class="control-board">
+			<button data-type="start">Start</button><button data-type="reset">Reset</button>
+			<div data-type="status"></div>
+			<div><span></span>Осталось мин: <span data-type="bombs-remaining"><%-bombs%></span></div>
+			<div><span>Время: </span><span data-type="clock">0</span></div>
+		</div>
+			<table data-type="game-field" class="field">
+				<tbody>
+				<%for (let h = 0; h < height; h++) { %>
+					<tr>
+						<% for (let w = 0; w < width; w++) {%><td></td><% }; %>
+					</tr>
+				<% } %>
+				</tbody>
+			</table>
+		</div>
+	</script>
+
+<script>
+	let options = {
+	height: 9,
+	width: 9,
+	bombs: 10,
+	template: "minesweeper-field"
+	}
+
+	let game = new Minesweeper(options);
+	document.getElementById('minesweeperGame').appendChild(game.getEl());
+
+</script>
+</body>
+</html>

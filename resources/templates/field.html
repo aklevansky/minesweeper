@@ -1,0 +1,25 @@
+<div data-type="minesweeper" class="minesweeper">
+	<div data-type="controls" class="minesweeper__control-board">
+		<button data-type="start">Start</button>
+		<button data-type="reset">Reset</button>
+		<div data-type="status" class="minesweeper__control-board_status"></div>
+		<div class="minesweeper__control-board_controls clearfix">
+			<div class="minesweeper__control-board_display-mines-left">
+				<span>Mines left: </span>
+				<span data-type="bombs-remaining"><%-bombs%></span>
+			</div>
+			<div class="minesweeper__control-board_display-time">
+				<span>Time: </span><span data-type="clock">0</span>
+			</div>
+		</div>
+	</div> <!-- end of minesweeper__control-board -->
+	<table data-type="game-field" class="minesweeper__field">
+		<tbody>
+			<%for (let h = 0; h < height; h++) { %>
+			<tr>
+				<% for (let w = 0; w < width; w++) {%><td></td><% }; %>
+			</tr>
+			<% } %>
+		</tbody>
+	</table>
+</div>
